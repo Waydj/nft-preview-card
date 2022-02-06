@@ -23,7 +23,7 @@ a {
     max-width: 250px;
     border-radius: 15px;
     box-shadow: 0px 15px 25px 10px rgba(0, 0, 0, 0.05),
-                0px 25px 30px 30px rgba(0, 0, 0, 0.1);
+                0px 25px 30px 25px rgba(0, 0, 0, 0.1);
 }
 hr {
     border-color: hsl(215, 32%, 27%);
@@ -49,7 +49,8 @@ img.image {
 }
 .price {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     font-weight: 300;
 }
 .price_eth {
@@ -58,7 +59,6 @@ img.image {
 img.price_icon {
     height: 15px;
     width: auto;
-    margin-right: 2px;
 }
 .title {
     font-size: 18px;
