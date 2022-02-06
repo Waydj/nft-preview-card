@@ -5,7 +5,6 @@ body {
     font-size: 14px;
     color: hsl(215, 51%, 70%);
     background-color: hsl(217, 54%, 11%);
-    box-sizing: border-box;
 }
 a {
     text-decoration: none;
@@ -15,21 +14,52 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin: 5% auto;
 }
 .block {
     background-color: hsl(216, 50%, 16%);
     padding: 15px;
     max-width: 250px;
     border-radius: 15px;
-    box-shadow: 0px 15px 25px 10px rgba(0, 0, 0, 0.05),
-                0px 25px 30px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 25px 10px rgba(0, 0, 0, 0.05),
+                0px 15px 30px 25px rgba(0, 0, 0, 0.1);
 }
+.photo {
+    position: relative;
+}
+.photo::after { 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hsl(178, 100%, 50%);
+    width: 100%;
+    height: 98%;
+    opacity: 0;
+    border-radius: 10px;
+}
+.photo:hover::after{
+    opacity: 0.4;
+    cursor: pointer;
+  }
+.photo::before { 
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: url(../images/icon-view.svg) no-repeat 50% 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    opacity: 0;
+    z-index: 2;
+}
+.photo:hover::before{
+    opacity: 1;
+    cursor: pointer;
+  }
 hr {
     border-color: hsl(215, 32%, 27%);
-}
-.block_info {
-
 }
 img {
     width: 250px;
@@ -49,9 +79,17 @@ img.image {
 }
 .price {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     font-weight: 300;
+}
+.price_row1 {
+    display: flex;
+    align-items: center;
+}
+.price_row2 {
+    display: flex;
+    align-items: center;
 }
 .price_eth {
     color: hsl(178, 100%, 50%);
@@ -59,6 +97,7 @@ img.image {
 img.price_icon {
     height: 15px;
     width: auto;
+    margin-right: 3px;
 }
 .title {
     font-size: 18px;
